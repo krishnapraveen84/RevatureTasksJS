@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Delegation Example</title>
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+  }
+</style>
+</head>
+<body>
+
+<ul id="parentList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<script>
+    const parentList = document.getElementById('parentList');
+
+    // Event listener attached to the parent ul element
+    parentList.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            // Access the specific child element that triggered the event
+            console.log('You clicked on:', event.target.textContent);
+        }
+    });
+</script>
+
+</body>
+</html>
